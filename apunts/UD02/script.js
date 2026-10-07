@@ -94,3 +94,31 @@ const retornObjecte = nom => ({nom: nom, actiu: true});
 
 
 console.log(retornObjecte('Sergi'));
+
+
+// CALLBACKS
+
+// function executarOperacio(a,b, operacio) {
+//     return operacio(a,b);
+// }
+
+// function sumar(a,b) {
+//     return a + b;
+// }
+
+// const resultat = executarOperacio(4, 3, sumar);
+// resultat = executarOperacio(10, 2, (a, b) => a / b);
+// console.log(resultat);
+
+function procesar(texto, transformacio) {
+    let trimmed = texto.trim();
+
+    return transformacio(trimmed);
+}
+
+const majuscules = texto => texto.toUpperCase();
+const contarCaracteres = texto => texto.length;
+
+let resultat = procesar('  Palabra ', majuscules);
+console.log(resultat);
+console.log(procesar('  Palabra ', contarCaracteres));
