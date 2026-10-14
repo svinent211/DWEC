@@ -122,3 +122,40 @@ const contarCaracteres = texto => texto.length;
 let resultat = procesar('  Palabra ', majuscules);
 console.log(resultat);
 console.log(procesar('  Palabra ', contarCaracteres));
+
+// Callbacks síncron i asíncrons
+// Síncron
+function saludar1(nom, callback) {
+    console.log(`Hola ${nom}`);
+    callback();
+    console.log(`La funció ha acabat`);
+}
+
+console.log('Inici del programa')
+saludar1("Joan", ()=> {
+    console.log('Estic executant el callback!');
+
+});
+console.log('Final del programa');
+
+// Asíncron
+
+// console.log("Inici");
+
+// setTimeout(()=> {
+//     console.log('Han pasat 2 segons...');
+// }, 2000);
+
+// console.log("Final");
+
+function executarAsincronament(callback, temps) {
+    console.log("Abans d'executar el callback");
+
+    setTimeout(callback, temps);
+
+    console.log("Després de programar el callback");
+}
+
+executarAsincronament(()=> {
+    console.log("Callback asíncron");
+}, 3000);
