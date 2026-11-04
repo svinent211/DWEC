@@ -61,37 +61,37 @@ function esValid(p) {
 
 // Classes
 
-class Producte {
-    constructor(id, nom, preu, estoc = 0) {
+// class Producte {
+//     constructor(id, nom, preu, estoc = 0) {
 
-        if(!Number.isInteger(id)) throw new TypeError("L'id ha de ser un valor enter.");
-        if(!nom?.trim()) throw new Error("El nom es obligatori.");
+//         if(!Number.isInteger(id)) throw new TypeError("L'id ha de ser un valor enter.");
+//         if(!nom?.trim()) throw new Error("El nom es obligatori.");
 
-        if(preu <= 0 || estoc < 0) throw new RangeError("Valors d'estoc incorrectes");
-        this.id = id;
-        this.nom = nom;
-        this.preu = preu;
-        this.estoc = estoc;
-    }
+//         if(preu <= 0 || estoc < 0) throw new RangeError("Valors d'estoc incorrectes");
+//         this.id = id;
+//         this.nom = nom;
+//         this.preu = preu;
+//         this.estoc = estoc;
+//     }
 
-    hiHaEstoc(unitats = 1) {
-        return this.estoc >= unitats;
-    }
+//     hiHaEstoc(unitats = 1) {
+//         return this.estoc >= unitats;
+//     }
 
-    valorEstoc() {
-        return this.preu * this.estoc;
-    }
+//     valorEstoc() {
+//         return this.preu * this.estoc;
+//     }
 
-    get etiqueta() {
-        return `${this.nom} - ${this.preu.toFixed(2)}€`;
-    }
+//     get etiqueta() {
+//         return `${this.nom} - ${this.preu.toFixed(2)}€`;
+//     }
 
-    static desDeProducte(dades) {
-        return new Producte(dades.id, dades.nom, dades.preu, dades.estoc);
-    }
+//     static desDeProducte(dades) {
+//         return new Producte(dades.id, dades.nom, dades.preu, dades.estoc);
+//     }
 
 
-}
+// }
 
 // const teclat = new Producte(1, "Teclat", 29.99, 10);
 // console.log(teclat.etiqueta);
